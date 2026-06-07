@@ -1,0 +1,152 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Arial, sans-serif;
+  background:
+    radial-gradient(circle at top left, #2f80ed55, transparent 30%),
+    radial-gradient(circle at bottom right, #9b51e055, transparent 35%),
+    #080b14;
+  color: white;
+  min-height: 100vh;
+}
+
+.app {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  height: 100vh;
+  padding: 18px;
+  gap: 18px;
+}
+
+.sidebar,
+.chat {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  backdrop-filter: blur(18px);
+  border-radius: 28px;
+  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.4);
+}
+
+.sidebar {
+  padding: 24px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+.sidebar p {
+  color: #b9c2d9;
+  line-height: 1.5;
+}
+
+select {
+  width: 100%;
+  margin-top: 24px;
+  padding: 14px;
+  border-radius: 16px;
+  border: none;
+  background: #111827;
+  color: white;
+}
+
+.chat {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.topbar {
+  padding: 22px 26px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.topbar h1 {
+  margin: 0;
+}
+
+#status {
+  background: #18c96422;
+  color: #7CFFB2;
+  border: 1px solid #18c96466;
+  padding: 8px 14px;
+  border-radius: 999px;
+  font-size: 14px;
+}
+
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 20px 26px;
+}
+
+.message {
+  max-width: 780px;
+  padding: 16px 18px;
+  border-radius: 20px;
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+.message p {
+  margin: 6px 0 0;
+}
+
+.ai {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.user {
+  margin-left: auto;
+  background: linear-gradient(135deg, #2f80ed, #9b51e0);
+}
+
+.composer {
+  display: flex;
+  gap: 12px;
+  padding: 18px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+}
+
+textarea {
+  flex: 1;
+  resize: none;
+  border: none;
+  outline: none;
+  border-radius: 18px;
+  padding: 16px;
+  background: #0f172a;
+  color: white;
+  font-size: 16px;
+}
+
+button {
+  border: none;
+  border-radius: 18px;
+  padding: 0 24px;
+  background: linear-gradient(135deg, #2f80ed, #9b51e0);
+  color: white;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+@media (max-width: 800px) {
+  .app {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar {
+    display: none;
+  }
+}

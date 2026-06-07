@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloud 9 AI</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <section class="sidebar">
+      <div class="logo">☁️ Cloud 9</div>
+      <p>Private AI powered by your ROG server.</p>
+      <select id="model">
+        <option value="mistral:7b">Mistral 7B</option>
+        <option value="llama3.1:8b">Llama 3.1 8B</option>
+      </select>
+    </section>
+
+    <section class="chat">
+      <div class="topbar">
+        <h1>Cloud 9 AI</h1>
+        <span id="status">Online</span>
+      </div>
+
+      <div id="messages" class="messages">
+        <div class="message ai">
+          <strong>Cloud 9</strong>
+          <p>What do you want to build today?</p>
+        </div>
+      </div>
+
+      <form id="chatForm" class="composer">
+        <textarea id="prompt" placeholder="Ask Cloud 9 anything..." rows="1"></textarea>
+        <button type="submit">Send</button>
+      </form>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
