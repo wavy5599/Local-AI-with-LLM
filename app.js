@@ -3,7 +3,6 @@ const promptInput = document.getElementById("prompt");
 const messages = document.getElementById("messages");
 const modelSelect = document.getElementById("model");
 
-// Ollama local API
 const OLLAMA_URL = "http://localhost:11434/api/generate";
 
 form.addEventListener("submit", async (e) => {
@@ -25,8 +24,19 @@ form.addEventListener("submit", async (e) => {
       },
       body: JSON.stringify({
         model: modelSelect.value,
-        prompt: prompt,
-        stream: false
+        prompt: `
+You are Cloud 9 AI, David's private AI assistant running locally on his ROG server.
+Answer clearly, quickly, and keep replies short unless the user asks for detail.
+
+User: ${prompt}
+Cloud 9:
+        `,
+        stream: false,
+        options: {
+          num_predict: 120,
+          temperature: 0.4,
+          num_ctx: 2048
+        }
       })
     });
 
@@ -68,3 +78,4 @@ function escapeHtml(str) {
     "'": "&#039;"
   }[char]));
 }
+
